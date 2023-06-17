@@ -1,0 +1,78 @@
+[
+    {
+        "label": "MongoClient",
+        "importPath": "pymongo",
+        "description": "pymongo",
+        "isExtraImport": true,
+        "detail": "pymongo",
+        "documentation": {}
+    },
+    {
+        "label": "MongoClient",
+        "importPath": "pymongo",
+        "description": "pymongo",
+        "isExtraImport": true,
+        "detail": "pymongo",
+        "documentation": {}
+    },
+    {
+        "label": "Database",
+        "importPath": "pymongo.database",
+        "description": "pymongo.database",
+        "isExtraImport": true,
+        "detail": "pymongo.database",
+        "documentation": {}
+    },
+    {
+        "label": "ABC",
+        "importPath": "abc",
+        "description": "abc",
+        "isExtraImport": true,
+        "detail": "abc",
+        "documentation": {}
+    },
+    {
+        "label": "abstractmethod",
+        "importPath": "abc",
+        "description": "abc",
+        "isExtraImport": true,
+        "detail": "abc",
+        "documentation": {}
+    },
+    {
+        "label": "DBConnectionHandler",
+        "kind": 6,
+        "importPath": "src.infra.configs.connection",
+        "description": "src.infra.configs.connection",
+        "peekOfCode": "class DBConnectionHandler(DBConnectionInterface):\n    def __init__(self) -> None:\n        self.__connection_string = 'mongodb://{}:{}@{}:{}/?authSource=admin'.format(\n            mongo_db_infos[\"USERNAME\"],\n            mongo_db_infos[\"PASSWORD\"],\n            mongo_db_infos[\"HOST\"],\n            mongo_db_infos[\"PORT\"],\n        )\n        self.__datababase_name = mongo_db_infos[\"DB_NAME\"]\n        self.__client = None",
+        "detail": "src.infra.configs.connection",
+        "documentation": {}
+    },
+    {
+        "label": "mongo_db_infos",
+        "kind": 5,
+        "importPath": "src.infra.configs.mongo_db_configs",
+        "description": "src.infra.configs.mongo_db_configs",
+        "peekOfCode": "mongo_db_infos = {\n    \"HOST\": \"localhost\",\n    \"PORT\": \"27017\",\n    \"USERNAME\": \"admin\",\n    \"PASSWORD\": \"password\",\n    \"DB_NAME\": \"dabaseloggi\",\n    \"COLLECTION_NAME\": \"SmartRouteLoggi\"\n}",
+        "detail": "src.infra.configs.mongo_db_configs",
+        "documentation": {}
+    },
+    {
+        "label": "test_db_connection",
+        "kind": 2,
+        "importPath": "src.infra.configs.test_connection",
+        "description": "src.infra.configs.test_connection",
+        "peekOfCode": "def test_db_connection():\n    # Cria uma instancia do DBConnectionHandler\n    db_handler = DBConnectionHandler()\n    # Conecta ao banco de dados\n    db_handler.connect_to_db()\n    # Obtém a conexão com o banco de dados\n    db_connection = db_handler.get_db_connection()\n    # Obtém o cliente do banco de dados\n    db_client = db_handler.get_db_client()\n    # Verificar se a conexão e o cliente são instancias válidas",
+        "detail": "src.infra.configs.test_connection",
+        "documentation": {}
+    },
+    {
+        "label": "DBConnectionInterface",
+        "kind": 6,
+        "importPath": "src.infra.interfaces.db_connection_interface",
+        "description": "src.infra.interfaces.db_connection_interface",
+        "peekOfCode": "class DBConnectionInterface(ABC):\n    @abstractmethod\n    def connect_to_db(self):\n        pass\n    @abstractmethod\n    def get_db_connection(self):\n        pass\n    @abstractmethod\n    def get_db_client(self):\n        pass",
+        "detail": "src.infra.interfaces.db_connection_interface",
+        "documentation": {}
+    }
+]

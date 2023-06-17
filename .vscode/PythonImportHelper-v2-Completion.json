@@ -24,6 +24,118 @@
         "documentation": {}
     },
     {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Document",
+        "importPath": "mongoengine",
+        "description": "mongoengine",
+        "isExtraImport": true,
+        "detail": "mongoengine",
+        "documentation": {}
+    },
+    {
+        "label": "StringField",
+        "importPath": "mongoengine",
+        "description": "mongoengine",
+        "isExtraImport": true,
+        "detail": "mongoengine",
+        "documentation": {}
+    },
+    {
+        "label": "ListField",
+        "importPath": "mongoengine",
+        "description": "mongoengine",
+        "isExtraImport": true,
+        "detail": "mongoengine",
+        "documentation": {}
+    },
+    {
+        "label": "ReferenceField",
+        "importPath": "mongoengine",
+        "description": "mongoengine",
+        "isExtraImport": true,
+        "detail": "mongoengine",
+        "documentation": {}
+    },
+    {
+        "label": "Document",
+        "importPath": "mongoengine",
+        "description": "mongoengine",
+        "isExtraImport": true,
+        "detail": "mongoengine",
+        "documentation": {}
+    },
+    {
+        "label": "StringField",
+        "importPath": "mongoengine",
+        "description": "mongoengine",
+        "isExtraImport": true,
+        "detail": "mongoengine",
+        "documentation": {}
+    },
+    {
+        "label": "FloatField",
+        "importPath": "mongoengine",
+        "description": "mongoengine",
+        "isExtraImport": true,
+        "detail": "mongoengine",
+        "documentation": {}
+    },
+    {
+        "label": "Document",
+        "importPath": "mongoengine",
+        "description": "mongoengine",
+        "isExtraImport": true,
+        "detail": "mongoengine",
+        "documentation": {}
+    },
+    {
+        "label": "StringField",
+        "importPath": "mongoengine",
+        "description": "mongoengine",
+        "isExtraImport": true,
+        "detail": "mongoengine",
+        "documentation": {}
+    },
+    {
+        "label": "ListField",
+        "importPath": "mongoengine",
+        "description": "mongoengine",
+        "isExtraImport": true,
+        "detail": "mongoengine",
+        "documentation": {}
+    },
+    {
+        "label": "ReferenceField",
+        "importPath": "mongoengine",
+        "description": "mongoengine",
+        "isExtraImport": true,
+        "detail": "mongoengine",
+        "documentation": {}
+    },
+    {
+        "label": "FloatField",
+        "importPath": "mongoengine",
+        "description": "mongoengine",
+        "isExtraImport": true,
+        "detail": "mongoengine",
+        "documentation": {}
+    },
+    {
         "label": "ABC",
         "importPath": "abc",
         "description": "abc",
@@ -64,6 +176,33 @@
         "description": "src.infra.configs.test_connection",
         "peekOfCode": "def test_db_connection():\n    # Cria uma instancia do DBConnectionHandler\n    db_handler = DBConnectionHandler()\n    # Conecta ao banco de dados\n    db_handler.connect_to_db()\n    # Obtém a conexão com o banco de dados\n    db_connection = db_handler.get_db_connection()\n    # Obtém o cliente do banco de dados\n    db_client = db_handler.get_db_client()\n    # Verificar se a conexão e o cliente são instancias válidas",
         "detail": "src.infra.configs.test_connection",
+        "documentation": {}
+    },
+    {
+        "label": "DeliveryPersonEntities",
+        "kind": 6,
+        "importPath": "src.infra.entities.delivery_person_entities",
+        "description": "src.infra.entities.delivery_person_entities",
+        "peekOfCode": "class DeliveryPersonEntities(Document):\n    \"\"\"A class used to represent a Delivery Person who will deliver Products on certain Routes\"\"\"\n    name: str = StringField(required=True)\n    routes: List[ReferenceField(RouteEntities)] = ListField(ReferenceField(RouteEntities))",
+        "detail": "src.infra.entities.delivery_person_entities",
+        "documentation": {}
+    },
+    {
+        "label": "Product",
+        "kind": 6,
+        "importPath": "src.infra.entities.product_entities",
+        "description": "src.infra.entities.product_entities",
+        "peekOfCode": "class Product(Document):\n    \"\"\"A class used to represent a Product that will be delivered\"\"\"\n    name = StringField(required=True)\n    weight = FloatField(required=True)",
+        "detail": "src.infra.entities.product_entities",
+        "documentation": {}
+    },
+    {
+        "label": "RouteEntities",
+        "kind": 6,
+        "importPath": "src.infra.entities.routes_entities",
+        "description": "src.infra.entities.routes_entities",
+        "peekOfCode": "class RouteEntities(Document):\n    \"\"\"A class used to represent a Delivery Route\"\"\"\n    api_provider: str = StringField(required=True)\n    predicted_duration: float = FloatField(required=True)\n    actual_duration: float = FloatField()\n    products: List[ReferenceField(Product)] = ListField(ReferenceField(Product))",
+        "detail": "src.infra.entities.routes_entities",
         "documentation": {}
     },
     {

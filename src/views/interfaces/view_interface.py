@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 from typing import Type
-from src.views.http_types.http_request import HttpRequest
-from src.views.http_types.http_response import HttpResponse
+from ...views.http_types.http_request import HttpRequest
+from ...views.http_types.http_response import HttpResponse
 
 
 class ViewInterface(ABC):
